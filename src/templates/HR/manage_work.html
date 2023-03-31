@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="addwork">
+  <h2 align="center">MANAGE WORK </h2>
+  <p align="center">
+    <label>
+    <input type="submit" name="Submit" value="ADD" />
+    </label>
+  </p>
+  <table width="200" border="1">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">DATE</th>
+      <th scope="col">DATE OF SUBMISSION</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['work']}}</td>
+      <td>{{i['date']}}</td>
+      <td>&nbsp;{{i['submission_date']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+      <td><a href="#">EDIT</a></td>
+      <td><a href="#">DELETE</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p align="center">&nbsp;</p>
+</form>
+
+</body>
+</html>

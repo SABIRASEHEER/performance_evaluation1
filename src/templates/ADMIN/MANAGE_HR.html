@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'admin_index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="addhr#about">
+  <h2> MANAGE HR </h2>
+  <table width="200" border="1" class="table">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['first_name']}} {{i['last_name']}}</td>
+      <td>{{i['place']}} {{i['post']}} {{i['pin']}}</td>
+      <td>&nbsp;{{i['phone']}}</td>
+      <td>&nbsp;{{i['email']}}</td>
+      <td>{{i['gender']}}</td>
+      <td><p><a href="edithr?id={{i['hid']}}#about">EDIT</a></p>
+      <p><a href="deletehr?id={{i['lid']}}#about">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

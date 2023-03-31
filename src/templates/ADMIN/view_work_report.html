@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'admin_index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="searchbytype#about">
+  <h2>WORK REPORT</h2>
+  <p>
+    TYPE
+    <label>
+    <select name="select">
+      <option>TEAM LEADER</option>
+      <option>TEAM MEMBER</option>
+    </select>
+    </label>
+    <label>
+    <input type="submit" name="Submit" value="Search" />
+    </label>
+  </p>
+  <table width="200" border="1" class="table">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">WORK</th>
+      <th scope="col">REPORT</th>
+      <th scope="col">DATE</th>
+      <th scope="col">STATUS</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['first_name']}}{{i['last_name']}}</td>
+      <td>{{i['work']}}</td>
+      <td>{{i['report']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

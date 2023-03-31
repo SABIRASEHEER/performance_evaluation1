@@ -1,0 +1,76 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'admin_index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="edithr1#about">
+  <h2>ADD HR</h2>
+  <table width="200" border="1" class="table">
+    <tr>
+      <th scope="row">FIRST NAME </th>
+      <td><label>
+        <input type="text" name="textfield"  value="{{val['first_name']}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">LAST NAME </th>
+      <td><label>
+        <input type="text" name="textfield2"value="{{val['last_name']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PLACE</th>
+      <td><label>
+      <input type="text" name="textfield3" value="{{val['place']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">POST</th>
+      <td><label>
+        <input type="text" name="textfield4"value="{{val['post']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PIN</th>
+      <td><label>
+        <input type="text" name="textfield5"value="{{val['pin']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><label>
+        <input type="text" name="textfield6"value="{{val['email']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE</th>
+      <td><label>
+        <input type="text" name="textfield7"value="{{val['phone']}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER</th>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if val['gender']=="male" %} checked {% endif %} />
+      MALE
+      <br />
+      <input name="radiobutton" type="radio" value="female" {% if val['gender']=="female" %} checked {% endif %}/>
+      FEMALE
+      </label></td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"><label>
+      <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
