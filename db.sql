@@ -27,14 +27,15 @@ CREATE TABLE `assign_tl` (
   `date` date DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`a_tl_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `assign_tl` */
 
 insert  into `assign_tl`(`a_tl_id`,`wid`,`tl_id`,`date`,`status`) values 
 (1,1,4,'2023-03-26','pending'),
 (2,1,4,'2023-03-26','pending'),
-(3,2,1,'2023-03-26','pending');
+(3,2,1,'2023-03-26','pending'),
+(4,3,6,'2023-04-01','pending');
 
 /*Table structure for table `assign_tm` */
 
@@ -90,7 +91,7 @@ CREATE TABLE `complaint` (
 
 insert  into `complaint`(`cid`,`lid`,`complaint`,`date`,`reply`) values 
 (1,3,'dgfgfg','2023-03-24','fdghfjh'),
-(2,3,'dfsgfdc','2023-03-27','pending'),
+(2,3,'dfsgfdc','2023-03-27','TDFG'),
 (3,3,'dfsgfdc','2023-03-27','pending');
 
 /*Table structure for table `feedback` */
@@ -104,12 +105,35 @@ CREATE TABLE `feedback` (
   `score` varchar(100) DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`fid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `feedback` */
 
 insert  into `feedback`(`fid`,`rid`,`feedback`,`score`,`date`) values 
-(1,4,'nice','0','2023-03-27');
+(1,4,'nice','0','2023-03-27'),
+(2,4,'good as expected','4.46','2023-03-28'),
+(3,4,'not good','1.4700000000000002','2023-03-28'),
+(4,3,'good work. completed with expected output','3.335','2023-03-31'),
+(5,4,'not finished yet','1.5','2023-03-31'),
+(6,4,'work completed as expected','1.5','2023-03-31');
+
+/*Table structure for table `feedback_tl` */
+
+DROP TABLE IF EXISTS `feedback_tl`;
+
+CREATE TABLE `feedback_tl` (
+  `fid` int(50) NOT NULL AUTO_INCREMENT,
+  `rid` int(50) DEFAULT NULL,
+  `feedback` varchar(100) DEFAULT NULL,
+  `score` varchar(100) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `feedback_tl` */
+
+insert  into `feedback_tl`(`fid`,`rid`,`feedback`,`score`,`date`) values 
+(1,5,'good work','3.7199999999999998','2023-04-01');
 
 /*Table structure for table `hr` */
 
@@ -127,12 +151,13 @@ CREATE TABLE `hr` (
   `phone` bigint(50) DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`hid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `hr` */
 
 insert  into `hr`(`hid`,`lid`,`first_name`,`last_name`,`place`,`post`,`pin`,`email`,`phone`,`gender`) values 
-(1,2,'sabira','seheer','ponnani','ponnani',14234,'dfsdaf@gmail.com',134567888,'female');
+(1,2,'sabira','seheer','tkv','ponnani',14234,'dfsdaf@gmail.com',134567888,'female'),
+(2,5,'ashiq','saleem','tvm','tvm',1234,'gfhffh',4354667467,'male');
 
 /*Table structure for table `login` */
 
@@ -144,7 +169,7 @@ CREATE TABLE `login` (
   `password` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`l_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=452 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=453 DEFAULT CHARSET=latin1;
 
 /*Data for the table `login` */
 
@@ -152,11 +177,9 @@ insert  into `login`(`l_id`,`username`,`password`,`type`) values
 (1,'admin','admin','admin'),
 (2,'sabi','sabi','hr'),
 (3,'tm','tm','team_member'),
-(4,'tl','tl','team_leader'),
-(445,'ssss','ssss','hr'),
-(448,'ssss','ssss','team_leader'),
-(449,'tftgh','hgfjh','team_member'),
-(451,'as','as','team_leader');
+(4,'ss','ss','team_leader'),
+(5,'ssss','ssss','hr'),
+(6,'asd','asd','team_leader');
 
 /*Table structure for table `notification` */
 
@@ -167,12 +190,13 @@ CREATE TABLE `notification` (
   `notification` varchar(100) DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`nid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `notification` */
 
 insert  into `notification`(`nid`,`notification`,`date`) values 
-(1,'dfssgf','2023-03-24');
+(1,'dfssgf','2023-03-24'),
+(2,'jczkxvjshchnmzkn .lkasjklam€sm.as€.a','2023-03-28');
 
 /*Table structure for table `report` */
 
@@ -184,16 +208,17 @@ CREATE TABLE `report` (
   `report` varchar(100) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`rid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `report` */
 
-insert  into `report`(`rid`,`wid`,`report`,`date`,`status`) values 
-(1,1,'ggf','2023-03-28','partially completed'),
-(2,2,'fgdgh','2023-03-26','not completed'),
-(3,2,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','ok'),
-(4,1,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','fgd');
+insert  into `report`(`rid`,`wid`,`report`,`date`,`status`,`type`) values 
+(1,1,'ggf','2023-03-28','partially completed','tl'),
+(2,2,'fgdgh','2023-03-26','not completed','tm'),
+(3,2,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','ok','tm'),
+(4,3,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','fgd','tl');
 
 /*Table structure for table `tl` */
 
@@ -201,7 +226,7 @@ DROP TABLE IF EXISTS `tl`;
 
 CREATE TABLE `tl` (
   `tl_id` int(50) NOT NULL AUTO_INCREMENT,
-  `lid` int(50) DEFAULT NULL,
+  `lid` int(50) NOT NULL,
   `hid` int(50) DEFAULT NULL,
   `first_name` varchar(100) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL,
@@ -217,10 +242,7 @@ CREATE TABLE `tl` (
 /*Data for the table `tl` */
 
 insert  into `tl`(`tl_id`,`lid`,`hid`,`first_name`,`last_name`,`place`,`post`,`pin`,`email`,`phone`,`gender`) values 
-(1,4,2,'santhosh','sai','fhghg','fhf',4656,'fgfggh',4656565,'female'),
-(5,448,2,'fdgfd','fdgf','gnfg','ghg',0,'hgjhgj',5646576,'male'),
-(6,449,4,'gffhjhf','fdsgfd','htfj','gfg',0,'hfgfh',0,'radiobutton'),
-(7,451,2,'tfgh','jghg','jhjkjk','yjjku',0,'ghjgjgjk',0,'male');
+(6,6,5,'gffhjhf','fdsgfd','htfj','gfg',78665,'hfgfh',8786,'male');
 
 /*Table structure for table `tm` */
 
@@ -258,14 +280,14 @@ CREATE TABLE `work` (
   `status` varchar(100) DEFAULT NULL,
   `submission_date` date DEFAULT NULL,
   PRIMARY KEY (`wid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `work` */
 
 insert  into `work`(`wid`,`work`,`date`,`hid`,`status`,`submission_date`) values 
-(1,'evaluation','2023-03-24',1,'pending','2023-03-31'),
-(2,'software ','2023-03-26',2,'pending','2023-03-26'),
-(3,'software ','2023-03-26',2,'pending','2023-03-26');
+(1,'software','2023-03-26',1,'pending','2023-03-26'),
+(2,'Software','2023-03-26',2,'pending','2023-04-02'),
+(3,'bike management','2023-04-01',5,'pending','2023-04-15');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

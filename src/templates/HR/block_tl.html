@@ -1,5 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'hr_index.html' %}
+{% block body %}
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
@@ -25,8 +28,11 @@
       <td>&nbsp;{{i['phone']}}</td>
       <td>&nbsp;{{i['email']}}</td>
       <td>&nbsp;{{i['gender']}}</td>
-      <td><a href="blocktl1?id={{i['lid']}}">BLOCK </a></td>
-	  <td><a href="unblock?id={{i['lid']}}">UNBLOCK </a></td>
+      <td>
+        {% if i['type']=='team_member' %}
+        <a href="blocktl1?id={{i['lid']}}">BLOCK </a>
+        {% else %}
+	    <a href="unblock?id={{i['lid']}}">UNBLOCK </a>{% endif %}</td>
     </tr>
     {% endfor %}
     <tr>
@@ -39,5 +45,5 @@
   </table>
 </form>
 </body>
-</html>
-
+<!--</html>-->
+{% endblock %}

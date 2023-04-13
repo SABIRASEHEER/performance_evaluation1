@@ -153,7 +153,7 @@ def addfeedback():
 def add_feedback():
     feedback=request.form['textarea']
     s=sentiment_score(feedback)
-    qry="INSERT INTO feedback VALUES(NULL,%s,%s,%s,CURDATE())"
+    qry="INSERT INTO feedback_tl VALUES(NULL,%s,%s,%s,CURDATE())"
     val=(session['lid'],feedback,s)
     iud(qry,val)
     return '''<script>alert('added');window.location='/addfeedback'</script>'''
@@ -224,7 +224,7 @@ def attendancetl():
 
 @app.route('/blocktl')
 def blocktl():
-    qry="select * from tl"
+    qry="SELECT login.*,tl.* FROM login JOIN tl ON login.l_id=`tl`.`lid`"
     res=selectall(qry)
     return render_template('HR/block_tl.html',val=res)
 
@@ -244,13 +244,37 @@ def unblock():
 
 @app.route('/home1')
 def home1():
-    return render_template('HR/home.html')
+    return render_template('hr_index.html')
 
 @app.route('/managework')
 def managework():
     qry="select * from work where hid=%s"
     res=selectall2(qry,session['lid'])
     return render_template('HR/manage_work.html',val=res)
+
+@app.route('/editwork')
+def editwork():
+    id = request.args.get('id')
+    session['wid'] = id
+    qry = "select * from work where wid=%s"
+    res = selectone(qry, id)
+    return render_template('HR/editwork.html',val=res)
+
+@app.route('/edit_work',methods=['post'])
+def edit_work():
+    work = request.form['textfield']
+    dateofsub = request.form['textfield2']
+    qry = "UPDATE WORK SET `work`=%s,`submission_date`=%s WHERE wid=%s"
+    val = (work, dateofsub,session['wid'])
+    iud(qry, val)
+    return '''<script>alert("updated");window.location='/managework'</script>'''
+
+@app.route('/deletework')
+def deletework():
+    id = request.args.get('id')
+    qry = "DELETE FROM `work` WHERE `wid`=%s"
+    iud(qry, id)
+    return '''<script> alert ("Deleted");window.location="/managework"</script>'''
 
 @app.route('/updatehr')
 def updatehr():
@@ -303,13 +327,40 @@ def delete_tl():
     iud(qry1,id)
     return '''<script> alert ("Deleted");window.location="/viewtl"</script>'''
 
+@app.route('/edit_tl')
+def edit_tl():
+    id = request.args.get('id')
+    session['tl_id'] = id
+    qry = "select * from tl where lid=%s"
+    res = selectone(qry, id)
+    # print(res,"OOOOOOOOO")
+    return render_template('HR/edit_tl.html',val=res)
+
+@app.route('/edittl',methods=['post'])
+def edittl():
+    fname = request.form['textfield']
+    lname = request.form['textfield2']
+    place = request.form['textfield3']
+    post = request.form['textfield4']
+    pin = request.form['textfield5']
+    email = request.form['textfield6']
+    phone = request.form['textfield7']
+    gender = request.form['radiobutton']
+    qry = "UPDATE tl SET first_name=%s,last_name=%s,place=%s,post=%s,pin=%s,email=%s,phone=%s,gender=%s where lid=%s"
+    val = (fname, lname, place, post, pin, email, phone, gender, session['tl_id'])
+    iud(qry, val)
+    return '''<script>alert("edited");window.location='/viewtl'</script>'''
+
+
 
 @app.route('/addfeedback1')
 def addfeedback1():
     id=request.args.get('id')
+    name=request.args.get('name')
+    print(name)
     session['rid']=id
 
-    return render_template('TL/add_feedback.html')
+    return render_template('TL/add_feedback.html',name=name)
 
 @app.route('/addfeedback_1',methods=['post','get'])
 def addfeedback_1():
@@ -373,7 +424,25 @@ def assignedwork():
 
 @app.route('/blocktm')
 def blocktm():
-    return render_template('TL/block_tm.html')
+    qry = "SELECT login.*,tm.* FROM login JOIN tm ON login.l_id=`tm`.`lid`"
+    res = selectall(qry)
+    return render_template('TL/block_tm.html',val=res)
+
+@app.route('/block_tm')
+def block_tm():
+    id = request.args.get('id')
+    qry = "update login set type='blocked' where l_id=%s"
+    iud(qry, id)
+    return '''<script>alert('blocked');window.location='/blocktm'</script>'''
+
+
+@app.route('/unblocktm')
+def unblocktm():
+    id = request.args.get('id')
+    qry = "update login set type='team_member' where l_id=%s"
+    iud(qry, id)
+    return '''<script>alert('unblocked');window.location='/blocktm'</script>'''
+
 
 @app.route('/home2')
 def home2():
