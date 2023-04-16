@@ -110,13 +110,27 @@ def viewperformance1():
 
 @app.route('/viewperformance_search',methods=['post'])
 def viewperformance_search():
+    print(request.form)
     ty=request.form['select']
     fd=request.form['textfield']
     td=request.form['textfield2']
     if ty=="TEAM MEMBER":
         qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN % s AND % s GROUP BY `tm`.`lid`"
         res=selectall2(qry,(fd,td))
-        return render_template('ADMIN/view_performance.html',val=res)
+        result=[]
+        for i in res:
+            if float(i['scr'])>4:
+                i['p']="excelent"
+            elif float(i['scr']) >3:
+                i['p'] = "good"
+            elif float(i['scr']) > 2:
+                i['p'] = "avarage"
+            elif float(i['scr']) > 1:
+                i['p'] = "bad"
+            else:
+                i['p'] = "poor"
+            result.append(i)
+        return render_template('ADMIN/view_performance.html',val=result)
 
 @app.route('/viewwork')
 def viewwork():
@@ -134,11 +148,11 @@ def viewworkreport():
 def searchbytype():
     type=request.form['select']
     if type == 'TEAM LEADER':
-        qry="SELECT tl.first_name,tl.last_name,work.work,report.* FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `work`ON `assign_tl`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid`"
+        qry="SELECT tl.first_name,tl.last_name,work.work,report.* FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `work`ON `assign_tl`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid` group by report.rid"
         res=selectall(qry)
         return render_template('ADMIN/view_work_report.html',val=res)
     else:
-        qry = "SELECT tm.first_name,tm.last_name,work.work,report.* FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `work`ON `assign_tm`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid`"
+        qry = "SELECT tm.first_name,tm.last_name,work.work,report.* FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `work`ON `assign_tm`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid` group by report.rid"
         res = selectall(qry)
         return render_template('ADMIN/view_work_report.html', val=res)
 
@@ -523,6 +537,7 @@ def viewperformance3():
 
 @app.route('/viewreport1')
 def viewreport1():
+    qr=""
     qry = "SELECT tm.*,assign_tm.`wid`,report.*,work.* FROM `work` JOIN `report` ON `report`.`wid`=`work`.`wid` JOIN `assign_tm` ON `assign_tm`.`wid`=`work`.`wid` JOIN `tm` ON `tm`.`lid`=`assign_tm`.`tm_id` WHERE `tm`.`tl_id`=%s"
     res = selectall2(qry, session['lid'])
     return render_template('TL/view_report.html',val=res)

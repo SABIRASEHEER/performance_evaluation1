@@ -48,12 +48,13 @@ CREATE TABLE `assign_tm` (
   `date` date DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`a_tm_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `assign_tm` */
 
 insert  into `assign_tm`(`a_tm_id`,`wid`,`tm_id`,`date`,`status`) values 
-(1,2,3,'2023-03-27','partially');
+(1,2,3,'2023-03-27','partially'),
+(2,2,3,'2023-04-12','pending');
 
 /*Table structure for table `attendance` */
 
@@ -105,7 +106,7 @@ CREATE TABLE `feedback` (
   `score` varchar(100) DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`fid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `feedback` */
 
@@ -115,7 +116,10 @@ insert  into `feedback`(`fid`,`rid`,`feedback`,`score`,`date`) values
 (3,4,'not good','1.4700000000000002','2023-03-28'),
 (4,3,'good work. completed with expected output','3.335','2023-03-31'),
 (5,4,'not finished yet','1.5','2023-03-31'),
-(6,4,'work completed as expected','1.5','2023-03-31');
+(6,4,'work completed as expected','1.5','2023-03-31'),
+(7,2,'good','5','2023-04-13'),
+(8,3,'ok','5','2023-04-13'),
+(9,3,'hj','3.25','2023-04-13');
 
 /*Table structure for table `feedback_tl` */
 
@@ -216,9 +220,9 @@ CREATE TABLE `report` (
 
 insert  into `report`(`rid`,`wid`,`report`,`date`,`status`,`type`) values 
 (1,1,'ggf','2023-03-28','partially completed','tl'),
-(2,2,'fgdgh','2023-03-26','not completed','tm'),
-(3,2,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','ok','tm'),
-(4,3,'<FileStorage: \'Diagram4.PNG\' (\'image/png\')>','2023-03-27','fgd','tl');
+(2,2,'okda','2023-03-26','not completed','tm'),
+(3,2,'okokokok','2023-03-27','ok','tm'),
+(4,3,'gud','2023-03-27','fgd','tl');
 
 /*Table structure for table `tl` */
 

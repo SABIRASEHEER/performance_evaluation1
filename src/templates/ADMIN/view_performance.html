@@ -38,14 +38,14 @@
     <tr>
       <th scope="col">NAME</th>
       <th scope="col">SCORE</th>
-      <!--<th scope="col">PERFORMANCE</th>-->
+      <th scope="col">PERFORMANCE</th>
     </tr>
 
 {% for i in val %}
     <tr>
       <td>{{i['first_name']}}{{i['last_name']}}</td>
-      <td>&nbsp;{{i['score']}}</td>
-      <!--<td>&nbsp;</td>-->
+      <td>&nbsp;{{i['scr']}}</td>
+      <td> {{i['p']}} </td>
     </tr>
     {% endfor %}
   </table>

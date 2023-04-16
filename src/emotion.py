@@ -20,9 +20,11 @@ def sentiment_score(msg):
         else :
             return p
     else:
+        if pos==0.0:
+            pos=.35
         p=5*pos
         if p<3.5:
             p=p+1.5
         return p
 
-# print(sentiment_score("good as expected"))
+# print(sentiment_score("work completed as expected"))
