@@ -9,32 +9,42 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="viewperformance_search">
-  <h2>PERFORMANCE</h2>
-  TYPE 
-  <label>
-  <select name="select">
+  <h2><center>PERFORMANCE</center></h2>
+
+
+
+
+  <table width="200" border="1" CLASS="table">
+    <tr>
+      <td>TYPE</td>
+      <td>
+      <label>
+      <select name="select">
     <!--<option>HR</option>-->
     <option>TEAM LEADER</option>
     <option>TEAM MEMBER</option>
   </select>
   </label>
-  <label>
-  <input type="submit" name="Submit" value="Search" />
-  </label>
-  <p>SEARCH BY DATE</p>
-  <p>
-    <label>FROM 
+      </td>
+    </tr>
+    <tr>
+     <td><p>SEARCH BY DATE</p></td>
+      <td>
+      <p>
+    <label>FROM
     <input type="date" name="textfield" />
-    </label> 
-    TO 
-    <label>
+    </label></p></td>
+      <td><p><label>
+    TO
+
     <input type="date" name="textfield2" />
-    </label>
+      </label></p></td>
+      <td>
     <label>
     <input type="submit" name="Submit2" value="Search" />
     </label>
-  </p>
-  <table width="200" border="1" CLASS="table">
+      </td>
+    </tr>
     <tr>
       <th scope="col">NAME</th>
       <th scope="col">SCORE</th>
