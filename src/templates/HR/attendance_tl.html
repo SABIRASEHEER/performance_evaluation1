@@ -13,19 +13,19 @@
   <h2>ATTENDANCE</h2>
   <table width="508" border="1">
     <tr>
-      <th width="184" scope="col">TEAM LEADER </th>
-      <th width="149" scope="col">ATTENDANCE</th>
-      <th width="80" scope="col">DATE</th>
-      <th width="67" scope="col">IN TIME</th>
-      <th width="67" scope="col">OUT TIME</th>
+      <th width="184" scope="col">Team Leader Name </th>
+      <th width="149" scope="col">Total Working Days</th>
+      <th width="80" scope="col">Total Present Days</th>
+      <th width="67" scope="col">Percentage</th>
+
     </tr>
     {% for i in val %}
     <tr>
       <td>{{i['first_name']}} {{i['last_name']}}</td>
-      <td>{{i['attendance']}}&nbsp;</td>
-      <td>{{i['date']}}</td>
-      <td>{{i['intime']}}</td>
-      <td>{{i['outtime']}}&nbsp;</td>
+      <td>{{i['twd']}}&nbsp;</td>
+      <td>{{i['tpd']}}</td>
+      <td>{{i['per']}}</td>
+
     </tr>
     {% endfor %}
   </table>

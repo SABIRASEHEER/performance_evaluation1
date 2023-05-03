@@ -2,28 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>PERFORMANCE</title>
+<title>Untitled Document</title>
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <h2>PERFORMANCE</h2>
+  <h2>ATTENDANCE</h2>
   <table width="200" border="1">
     <tr>
-      <th scope="col">TEAM MEMBER </th>
-      <th scope="col">SCORE</th>
-      <th scope="col">PERFORMANCE</th>
+
+      <th scope="col">DATE</th>
+      <th scope="col">ATTENDANCE</th>
+      <th scope="col">ENTER TIME </th>
+      <th scope="col">LEAVING TIME </th>
     </tr>
-   {% for i in val %}
+    {% for i in val %}
     <tr>
-      <td>&nbsp;{{i['first_name']}} {{i['last_name']}}</td>
-      <td>&nbsp;{{i['scr']}}</td>
-      <td>&nbsp;{{i['p']}}</td>
+
+      <td>&nbsp;{{i['date']}}</td>
+      <td>&nbsp;{{i['attendance']}}</td>
+      <td>&nbsp;{{i['intime']}}</td>
+      <td> {{i['outtime']}}</td>
     </tr>
     {% endfor %}
   </table>
   <p>&nbsp;</p>
 </form>
-
 </body>
 </html>

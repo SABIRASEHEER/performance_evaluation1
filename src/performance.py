@@ -252,7 +252,7 @@ def assigntl1():
 
 @app.route('/attendancetl')
 def attendancetl():
-    qry="SELECT attendance.*,tl.* FROM attendance JOIN tl ON attendance.lid=tl.lid"
+    qry="SELECT COUNT(*) AS twd,SUM(`attendance`) AS tpd,(SUM(`attendance`)/COUNT(*))*100 AS per,`tl`.`first_name`,`last_name` FROM `tl` JOIN `attendance` ON `attendance`.`lid`=`tl`.`lid` GROUP BY `tl`.`lid` "
     res=selectall(qry)
     return render_template('HR/attendance_tl.html',val=res)
 
@@ -348,8 +348,8 @@ def viewperformance_search1():
     fd=request.form['textfield']
     td=request.form['textfield2']
     if ty=="TEAM MEMBER":
-        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN % s AND % s GROUP BY `tm`.`lid`"
-        res=selectall2(qry,(fd,td))
+        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN %s AND %s AND `tm`.`lid` IN(SELECT `lid` FROM `tm` WHERE `tl_id` IN(SELECT `lid` FROM `tl` WHERE `hid`=%s)) GROUP BY `tm`.`lid`"
+        res=selectall2(qry,(fd,td,session['lid']))
         result=[]
         for i in res:
             if float(i['scr'])>4:
@@ -364,6 +364,23 @@ def viewperformance_search1():
                 i['p'] = "poor"
             result.append(i)
         return render_template('HR/view_performance.html',val=result)
+    else:
+        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date`  BETWEEN %s AND %s AND `tl`.`lid` IN (SELECT `lid` FROM `tl` WHERE `hid`=%s) GROUP BY `tl`.`lid`"
+        res = selectall2(qry, (fd, td,session['lid']))
+        result = []
+        for i in res:
+            if float(i['scr']) > 4:
+                i['p'] = "excelent"
+            elif float(i['scr']) > 3:
+                i['p'] = "good"
+            elif float(i['scr']) > 2:
+                i['p'] = "avarage"
+            elif float(i['scr']) > 1:
+                i['p'] = "bad"
+            else:
+                i['p'] = "poor"
+            result.append(i)
+        return render_template('ADMIN/view_performance.html', val=result,d1=str(fd),d2=str(td))
 
 @app.route('/viewreport')
 def viewreport():
@@ -566,10 +583,20 @@ def update_report():
     return '''<script>alert('updated');window.location='/updatereport'</script>'''
 
 
+@app.route('/myatt',methods=['post','get'])
+def myatt():
+    qry="SELECT tl.*,`attendance`.* FROM tl JOIN `attendance` ON `attendance`.`lid`=`tl`.`lid` WHERE `tl`.`lid`=%s"
+    res=selectall2(qry,session['lid'])
+    return render_template('TL/my_att.html',val=res)
 
-@app.route('/verifyatt')
+
+@app.route('/verifyatt',methods=['post','get'])
 def verifyatt():
-    return render_template('TL/verify_att.html')
+    qry="SELECT COUNT(*) AS twd,SUM(`attendance`) AS tpd,(SUM(`attendance`)/COUNT(*))*100 AS per,`tm`.`first_name`,`last_name` FROM `tm` JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` GROUP BY `tm`.`lid` "
+    res = selectall(qry)
+    return render_template('TL/verify_att.html',val=res)
+@app.route('/verifyattendance')
+
 
 @app.route('/viewnot2')
 def viewnot2():
@@ -579,7 +606,23 @@ def viewnot2():
 
 @app.route('/viewperformance3')
 def viewperformance3():
-    return render_template('TL/view_performance.html')
+    print(request.form)
+    qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm'  AND tm.`tl_id`=%s GROUP BY `tm`.`lid` "
+    res=selectall2(qry,session['lid'])
+    result = []
+    for i in res:
+        if float(i['scr']) > 4:
+            i['p'] = "excelent"
+        elif float(i['scr']) > 3:
+            i['p'] = "good"
+        elif float(i['scr']) > 2:
+            i['p'] = "avarage"
+        elif float(i['scr']) > 1:
+            i['p'] = "bad"
+        else:
+            i['p'] = "poor"
+        result.append(i)
+    return render_template('TL/view_performance.html',val=result)
 
 @app.route('/viewreport1')
 def viewreport1():
@@ -623,7 +666,9 @@ def update_report1():
 
 @app.route('/viewatt')
 def viewatt():
-    return render_template('TM/view_att.html')
+    qry = "SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s "
+    res = selectall2(qry,session['lid'])
+    return render_template('TM/view_att.html',val=res)
 
 @app.route('/viewnot3')
 def viewnot3():

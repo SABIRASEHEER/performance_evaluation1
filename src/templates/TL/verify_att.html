@@ -1,26 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
+<form id="form1" name="form1" method="post" action="myatt">
   <h2>ATTENDANCE</h2>
-  <table width="200" border="1">
+  <table width="508" border="1">
+    <tr><td><label>
+        <input type="submit" name="Submit" value="My Attendance" />
+      </label></td></tr>
     <tr>
-      <th scope="col">TEAM MEMBER </th>
-      <th scope="col">DATE</th>
-      <th scope="col">ENTER TIME </th>
-      <th scope="col">LEAVING TIME </th>
+      <th width="184" scope="col">Team Member Name </th>
+      <th width="149" scope="col">Total Working Days</th>
+      <th width="80" scope="col">Total Present Days</th>
+      <th width="67" scope="col">Percentage</th>
+
     </tr>
+    {% for i in val %}
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>{{i['first_name']}} {{i['last_name']}}</td>
+      <td>{{i['twd']}}&nbsp;</td>
+      <td>{{i['tpd']}}</td>
+      <td>{{i['per']}}</td>
+
     </tr>
+    {% endfor %}
   </table>
   <p>&nbsp;</p>
 </form>
