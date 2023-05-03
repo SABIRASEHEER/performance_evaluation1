@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d125c3a-259b-43be-a45f-05b32892c690" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/codep.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/negative" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/positive" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vader_lexicon.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/performance.py" afterPath="$PROJECT_DIR$/src/performance.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/view_performance.html" afterPath="$PROJECT_DIR$/src/templates/HR/view_performance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/view_report.html" afterPath="$PROJECT_DIR$/src/templates/HR/view_report.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,10 +24,12 @@
       <file leaf-file-name="performance.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/performance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            <state relative-caret-position="136">
+              <caret line="150" column="93" lean-forward="false" selection-start-line="150" selection-start-column="93" selection-end-line="150" selection-end-column="93" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#3960#4777#0" expanded="false" />
+                <element signature="e#12606#13420#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -29,8 +38,8 @@
       <file leaf-file-name="view_report.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/HR/view_report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="193">
+              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -39,8 +48,8 @@
       <file leaf-file-name="add_feedback.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/HR/add_feedback.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="187">
+              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -49,8 +58,8 @@
       <file leaf-file-name="view_performance.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/HR/view_performance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+            <state relative-caret-position="34">
+              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -60,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/view_performance.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+              <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -69,7 +78,7 @@
       <file leaf-file-name="emotion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/emotion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="-230">
               <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <element signature="e#1#60#0" expanded="true" />
@@ -78,22 +87,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TL/home.html">
+      <file leaf-file-name="codep.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/codep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tl_index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/tl_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1955">
-              <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="122">
+              <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,16 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dele</find>
-      <find>feed</find>
-      <find>fee</find>
-      <find>admin/view_w</find>
-      <find>insert into report</find>
-      <find>viewperfomanc</find>
-      <find>viewperformance1</find>
-      <find>per</find>
-      <find>bl</find>
-      <find>img src</find>
       <find>workre</find>
       <find>BLOCKTM</find>
       <find>viewtl</find>
@@ -131,14 +122,24 @@
       <find>blockt</find>
       <find>addfee</find>
       <find>addfeedback1</find>
-      <find>viewreport</find>
       <find>viewre</find>
       <find>notification</find>
       <find>hom</find>
       <find>rep</find>
-      <find>viewreport1</find>
       <find>viewperformance_search</find>
       <find>searchbytype</find>
+      <find>goo</find>
+      <find>good</find>
+      <find>sentiment_score</find>
+      <find>improve</find>
+      <find>predict_senti</find>
+      <find>im</find>
+      <find>addfeedback_1</find>
+      <find>addfeedback</find>
+      <find>viewreport1</find>
+      <find>viewreport</find>
+      <find>addfeedback'</find>
+      <find>viewperformance_search'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,9 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dbconnectionnew.py" />
-        <option value="$PROJECT_DIR$/src/templates/TL/home.html" />
-        <option value="$PROJECT_DIR$/src/templates/TL/view_not.html" />
         <option value="$PROJECT_DIR$/src/templates/TL/add_tm.html" />
         <option value="$PROJECT_DIR$/src/templates/TL/edit_tm.html" />
         <option value="$PROJECT_DIR$/src/templates/TL/assigned_work.html" />
@@ -190,11 +188,15 @@
         <option value="$PROJECT_DIR$/src/templates/HR/editwork.html" />
         <option value="$PROJECT_DIR$/src/templates/HR/manage_work.html" />
         <option value="$PROJECT_DIR$/src/templates/HR/update_hr.html" />
-        <option value="$PROJECT_DIR$/src/templates/HR/view_performance.html" />
-        <option value="$PROJECT_DIR$/src/templates/HR/view_report.html" />
         <option value="$PROJECT_DIR$/src/templates/HR/view_tl.html" />
         <option value="$PROJECT_DIR$/src/templates/tl_index.html" />
         <option value="$PROJECT_DIR$/src/emotion.py" />
+        <option value="$PROJECT_DIR$/src/templates/HR/view_performance.html" />
+        <option value="$PROJECT_DIR$/src/sampleee.py" />
+        <option value="$PROJECT_DIR$/src/code.py" />
+        <option value="$PROJECT_DIR$/src/positive.txt" />
+        <option value="$PROJECT_DIR$/src/negative.txt" />
+        <option value="$PROJECT_DIR$/src/templates/HR/view_report.html" />
         <option value="$PROJECT_DIR$/src/performance.py" />
         <option value="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" />
       </list>
@@ -239,12 +241,6 @@
               <item name="Performance_evaluation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Performance_evaluation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Performance_evaluation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Performance_evaluation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -272,15 +268,15 @@
     <property name="last_opened_file_path" value="D:/" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src" />
+      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates\HR" />
       <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates\ADMIN" />
       <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates" />
-      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates\HR" />
       <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\static" />
-      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates\TL" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,6 +292,23 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.performance">
+    <configuration name="code" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Performance_evaluation" />
+      <option name="SCRIPT_NAME" value="C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\codep.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="emotion" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -330,14 +343,35 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="2">
+    <configuration name="sampleee" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Performance_evaluation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sampleee.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.performance" />
       <item index="1" class="java.lang.String" itemvalue="Python.emotion" />
+      <item index="2" class="java.lang.String" itemvalue="Python.sampleee" />
+      <item index="3" class="java.lang.String" itemvalue="Python.code" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.performance" />
-        <item index="1" class="java.lang.String" itemvalue="Python.emotion" />
+        <item index="1" class="java.lang.String" itemvalue="Python.code" />
+        <item index="2" class="java.lang.String" itemvalue="Python.sampleee" />
+        <item index="3" class="java.lang.String" itemvalue="Python.emotion" />
       </list>
     </recent_temporary>
   </component>
@@ -359,18 +393,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3878887" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3878887" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -380,98 +413,41 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3878887" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/codep.py</url>
+          <line>182</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/codep.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/codep.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/codep.py</url>
+          <line>163</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/TL/assign_tm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/view_not.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/send_complaint.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/view_reply.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/view_work.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TM/update_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TL/update_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/HOME.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -726,9 +702,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/positive">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vader_lexicon.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negative">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/emotion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-230">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="e#1#60#0" expanded="true" />
@@ -738,34 +754,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/HR/view_performance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="34">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sampleee.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/positive.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="1858" column="10" lean-forward="true" selection-start-line="1858" selection-start-column="10" selection-end-line="1858" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/codep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negative.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="124" column="5" lean-forward="false" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/HR/view_report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="193">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/HR/add_feedback.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        <state relative-caret-position="187">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/performance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        <state relative-caret-position="136">
+          <caret line="150" column="93" lean-forward="false" selection-start-line="150" selection-start-column="93" selection-end-line="150" selection-end-column="93" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#3960#4777#0" expanded="false" />
+            <element signature="e#12606#13420#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -773,7 +825,7 @@
     <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/view_performance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+          <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
           <folding />
         </state>
       </provider>

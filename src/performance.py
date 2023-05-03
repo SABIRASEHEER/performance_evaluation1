@@ -1,6 +1,7 @@
 from flask import *
 from src.dbconnectionnew import *
 from src.emotion import sentiment_score
+from src.codep import predict_senti
 app = Flask( __name__)
 app.secret_key='ffff'
 @app.route('/')
@@ -131,6 +132,23 @@ def viewperformance_search():
                 i['p'] = "poor"
             result.append(i)
         return render_template('ADMIN/view_performance.html',val=result)
+    else:
+        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date` BETWEEN %s AND %s GROUP BY `tl`.`lid`"
+        res = selectall2(qry, (fd, td))
+        result = []
+        for i in res:
+            if float(i['scr']) > 4:
+                i['p'] = "excelent"
+            elif float(i['scr']) > 3:
+                i['p'] = "good"
+            elif float(i['scr']) > 2:
+                i['p'] = "avarage"
+            elif float(i['scr']) > 1:
+                i['p'] = "bad"
+            else:
+                i['p'] = "poor"
+            result.append(i)
+        return render_template('ADMIN/view_performance.html', val=result,d1=str(fd),d2=str(td))
 
 @app.route('/viewwork')
 def viewwork():
@@ -160,15 +178,17 @@ def searchbytype():
 
 @app.route('/addfeedback')
 def addfeedback():
+    session['rid']=request.args.get('id')
 
-    return render_template('HR/add_feedback.html')\
+    return render_template('HR/add_feedback.html')
 
 @app.route('/add_feedback',methods=['post','get'])
 def add_feedback():
     feedback=request.form['textarea']
     s=sentiment_score(feedback)
+    s=predict_senti(feedback)[1]
     qry="INSERT INTO feedback_tl VALUES(NULL,%s,%s,%s,CURDATE())"
-    val=(session['lid'],feedback,s)
+    val=(session['rid'],feedback,s)
     iud(qry,val)
     return '''<script>alert('added');window.location='/addfeedback'</script>'''
 
@@ -310,6 +330,7 @@ def updateprofile():
     val = ( fname, lname, place, post, pin, email, phone, gender,session['lid'])
     iud(qry, val)
     return '''<script>alert("updated");window.location='/updatehr'</script>'''
+
 @app.route('/viewnot1')
 def viewnot1():
     qry="select * from notification"
@@ -319,6 +340,30 @@ def viewnot1():
 @app.route('/viewperformance2')
 def viewperformance2():
     return render_template('HR/view_performance.html')
+
+@app.route('/viewperformance_search1',methods=['post'])
+def viewperformance_search1():
+    print(request.form)
+    ty=request.form['select']
+    fd=request.form['textfield']
+    td=request.form['textfield2']
+    if ty=="TEAM MEMBER":
+        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN % s AND % s GROUP BY `tm`.`lid`"
+        res=selectall2(qry,(fd,td))
+        result=[]
+        for i in res:
+            if float(i['scr'])>4:
+                i['p']="excelent"
+            elif float(i['scr']) >3:
+                i['p'] = "good"
+            elif float(i['scr']) > 2:
+                i['p'] = "avarage"
+            elif float(i['scr']) > 1:
+                i['p'] = "bad"
+            else:
+                i['p'] = "poor"
+            result.append(i)
+        return render_template('HR/view_performance.html',val=result)
 
 @app.route('/viewreport')
 def viewreport():
@@ -380,6 +425,7 @@ def addfeedback1():
 def addfeedback_1():
     feedback = request.form['textarea']
     s = sentiment_score(feedback)
+    s = predict_senti(feedback)[1]
     qry = "INSERT INTO feedback VALUES(NULL,%s,%s,%s,CURDATE())"
     val = ( session['rid'],feedback,s)
     iud(qry, val)
@@ -537,8 +583,8 @@ def viewperformance3():
 
 @app.route('/viewreport1')
 def viewreport1():
-    qr=""
-    qry = "SELECT tm.*,assign_tm.`wid`,report.*,work.* FROM `work` JOIN `report` ON `report`.`wid`=`work`.`wid` JOIN `assign_tm` ON `assign_tm`.`wid`=`work`.`wid` JOIN `tm` ON `tm`.`lid`=`assign_tm`.`tm_id` WHERE `tm`.`tl_id`=%s"
+
+    qry = "SELECT tm.*,assign_tm.`wid`,report.*,work.* FROM `work`  JOIN `assign_tm` ON `assign_tm`.`wid`=`work`.`wid` JOIN `tm` ON `tm`.`lid`=`assign_tm`.`tm_id` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` WHERE `report`.`type`='tm' and `tm`.`tl_id`=%s"
     res = selectall2(qry, session['lid'])
     return render_template('TL/view_report.html',val=res)
 
