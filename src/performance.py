@@ -595,7 +595,6 @@ def verifyatt():
     qry="SELECT COUNT(*) AS twd,SUM(`attendance`) AS tpd,(SUM(`attendance`)/COUNT(*))*100 AS per,`tm`.`first_name`,`last_name` FROM `tm` JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` GROUP BY `tm`.`lid` "
     res = selectall(qry)
     return render_template('TL/verify_att.html',val=res)
-@app.route('/verifyattendance')
 
 
 @app.route('/viewnot2')
@@ -664,11 +663,27 @@ def update_report1():
     iud(qry,val)
     return '''<script>alert('updated');window.location='/updatereport1'</script>'''
 
+@app.route('/viewattendance',methods=['post'])
+def viewattendance():
+    fd=request.form['textfield']
+    td=request.form['textfield2']
+    qry1="SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s AND `attendance`.`date` BETWEEN %s AND %s"
+    res1=selectall2(qry1,(session['lid'],fd,td))
+    qry2="SELECT SUM(`attendance`) FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+    res2=selectall2(qry2,session['lid'])
+    qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+    res3 = selectall2(qry3, session['lid'])
+    return render_template('TM/view_att.html',val1=res1,sd=fd,ed=td,val2=res2,val3=res3)
+
 @app.route('/viewatt')
 def viewatt():
-    qry = "SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s "
-    res = selectall2(qry,session['lid'])
-    return render_template('TM/view_att.html',val=res)
+    qry1 = "SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s "
+    res1 = selectall2(qry1,session['lid'])
+    qry2 = "SELECT SUM(`attendance`) FROM `attendance` WHERE `lid`=%s "
+    res2 = selectall2(qry2, session['lid'])
+    qry3="SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s "
+    res3=selectall2(qry3,session['lid'])
+    return render_template('TM/view_att.html',val=res1,val2=res2,val3=res3['per'])
 
 @app.route('/viewnot3')
 def viewnot3():

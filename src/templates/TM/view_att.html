@@ -1,21 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'tm_index.html'%}
+{% block body %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="viewatt">
+<form id="form1" name="form1" method="post" action="viewattendance">
   <h2>ATTENDANCE</h2>
   <p>VIEW BY DATES</p>
   <p>FROM 
     <label>
-    <input type="date" name="textfield" />
+    <input type="date" name="textfield" value="{{sd}}"/>
     </label> 
     TO 
     <label>
-    <input type="date" name="textfield2" />
+    <input type="date" name="textfield2" value="{{ed}}"/>
     </label>
     <label>
     <input type="submit" name="Submit" value="Submit" />
@@ -23,8 +25,13 @@
   </p>
   <table width="200" border="1">
     <tr>
-      <td>Percentage</td>
-      <td>Total Present Days</td>
+      <th scope="row">Total Present days</th>
+      <td>{{val2}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Percentage</th>
+      <td>{{val3}}</td>
+
     </tr>
     <tr>
       <th scope="col">DATE</th>
@@ -44,4 +51,5 @@
   <p>&nbsp;</p>
 </form>
 </body>
-</html>
+<!--</html>-->
+{% endblock %}
