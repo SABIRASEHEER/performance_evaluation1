@@ -23,14 +23,14 @@
     <input type="submit" name="Submit" value="Submit" />
     </label>
   </p>
-  <table width="200" border="1">
+  <table width="200" border="1" class="table table-dark">
     <tr>
-      <th scope="row">Total Present days</th>
-      <td>{{val2}}</td>
+      <th scope="row" colspan="2">Total Present days</th>
+      <td colspan="2"><input type="text" name="sum" value="{{val2['sum']}}"></td>
     </tr>
     <tr>
-      <th scope="row">Percentage</th>
-      <td>{{val3}}</td>
+      <th scope="row" colspan="2">Percentage</th>
+      <td colspan="2"><input type="text" name="per" value="{{val3['per']}}"></td>
 
     </tr>
     <tr>

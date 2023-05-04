@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#check").change(function(){
+    var id=document.getElementById("check").value;
+   if (id == "1" ){
+    $(".cat1").show();
+}
+  });
+});
+</script>
+</head>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_attendance2">
+  <h2 align="center">Add Attendance</h2>
+  <table width="200" border="1">
+    <tr>
+      <th scope="row">Leaders</th>
+      <td><label>
+        <select name="select">
+         {% for i in val %}
+          <option value="{{i['lid']}}">{{i['first_name']}} {{i['last_name']}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Attendance</th>
+      <td><label>
+        <input name="radiobutton" type="radio" value="1" id="check" onchange="check()" />
+      Present
+      <br />
+      <input name="radiobutton" type="radio" value="0" />
+      Absent
+      </label></td>
+    </tr>
+
+    <tr class="cat1" style="display:none">
+      <th scope="row">In Time </th>
+      <td><label>
+        <input type="time" name="textfield" />
+      </label></td>
+    </tr>
+    <tr class="cat1" style="display:none">
+      <th scope="row">Out Time </th>
+      <td><label>
+        <input type="time" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><label>
+        <input type="date" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Mark " />
+      </label></th>
+    </tr>
+  </table>
+  <h2 align="center">&nbsp; </h2>
+</form>
+</body>
+</html>

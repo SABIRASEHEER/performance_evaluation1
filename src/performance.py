@@ -175,6 +175,24 @@ def searchbytype():
         return render_template('ADMIN/view_work_report.html', val=res)
 
 
+@app.route('/addattendance1')
+def addattendance1():
+    q="SELECT * FROM `tl` WHERE `hid`=%s"
+    res=selectall2(q,session['lid'])
+    return render_template('HR/add_attendance.html',val=res)
+
+@app.route('/add_attendance1',methods=['post','get'])
+def add_attendance1():
+    leader = request.form['select']
+    intime= request.form['textfield']
+    outtime = request.form['textfield2']
+    date = request.form['textfield3']
+    attendance = request.form['radiobutton']
+    qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+    val=(attendance,leader,date,intime,outtime)
+    iud(qry,val)
+    return'''<script>alert("atendance marked");window.location='/addattendance1'</script>'''
+
 
 @app.route('/addfeedback')
 def addfeedback():
@@ -427,7 +445,23 @@ def edittl():
     iud(qry, val)
     return '''<script>alert("edited");window.location='/viewtl'</script>'''
 
+@app.route('/addattendance2')
+def addattendance2():
+    q="SELECT * FROM `tm` WHERE `tl_id`=%s"
+    res=selectall2(q,session['lid'])
+    return render_template('TL/add_attendance.html',val=res)
 
+@app.route('/add_attendance2',methods=['post','get'])
+def add_attendance2():
+    member = request.form['select']
+    intime= request.form['textfield']
+    outtime = request.form['textfield2']
+    date = request.form['textfield3']
+    attendance = request.form['radiobutton']
+    qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+    val=(attendance,member,date,intime,outtime)
+    iud(qry,val)
+    return'''<script>alert("atendance marked");window.location='/addattendance2'</script>'''
 
 @app.route('/addfeedback1')
 def addfeedback1():
@@ -669,21 +703,24 @@ def viewattendance():
     td=request.form['textfield2']
     qry1="SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s AND `attendance`.`date` BETWEEN %s AND %s"
     res1=selectall2(qry1,(session['lid'],fd,td))
-    qry2="SELECT SUM(`attendance`) FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
-    res2=selectall2(qry2,session['lid'])
+    qry2="SELECT SUM(`attendance`)as `sum` FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+    res2=selectone(qry2,(session['lid'],fd,td))
     qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
-    res3 = selectall2(qry3, session['lid'])
+    res3 = selectone(qry3, (session['lid'],fd,td))
     return render_template('TM/view_att.html',val1=res1,sd=fd,ed=td,val2=res2,val3=res3)
 
 @app.route('/viewatt')
 def viewatt():
     qry1 = "SELECT tm.*,`attendance`.* FROM tm JOIN `attendance` ON `attendance`.`lid`=`tm`.`lid` WHERE `tm`.`lid`=%s "
     res1 = selectall2(qry1,session['lid'])
-    qry2 = "SELECT SUM(`attendance`) FROM `attendance` WHERE `lid`=%s "
-    res2 = selectall2(qry2, session['lid'])
+
+    qry2 = "SELECT SUM(`attendance`)as `sum` FROM `attendance` WHERE `lid`=%s "
+    res2 = selectone(qry2, session['lid'])
+    print(res2)
     qry3="SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s "
-    res3=selectall2(qry3,session['lid'])
-    return render_template('TM/view_att.html',val=res1,val2=res2,val3=res3['per'])
+    res3=selectone(qry3,session['lid'])
+
+    return render_template('TM/view_att.html',val=res1,val2=res2,val3=res3)
 
 @app.route('/viewnot3')
 def viewnot3():
