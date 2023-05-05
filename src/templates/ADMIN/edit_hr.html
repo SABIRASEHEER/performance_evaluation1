@@ -9,54 +9,55 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="edithr1#about">
-  <h2>ADD HR</h2>
-  <table width="200" border="1" class="table">
+  <h2 align="center">Edit HR</h2>
+  <table width="200" border="1" class="table table-striped table-dark">
     <tr>
       <th scope="row">FIRST NAME </th>
       <td><label>
-        <input type="text" name="textfield"  value="{{val['first_name']}}"/>
+        <input type="text" name="textfield"  value="{{val['first_name']}}" required pattern="[A-Z a-z.]{3,25}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">LAST NAME </th>
       <td><label>
-        <input type="text" name="textfield2"value="{{val['last_name']}}" />
+        <input type="text" name="textfield2"value="{{val['last_name']}}" required pattern="[A-Z a-z.]{1,25}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">PLACE</th>
       <td><label>
-      <input type="text" name="textfield3" value="{{val['place']}}" />
+      <input type="text" name="textfield3" value="{{val['place']}}" required pattern="[A-Z a-z.]{3,25}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">POST</th>
       <td><label>
-        <input type="text" name="textfield4"value="{{val['post']}}" />
+        <input type="text" name="textfield4"value="{{val['post']}}" required pattern="[A-Z a-z.]{3,25}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">PIN</th>
       <td><label>
-        <input type="text" name="textfield5"value="{{val['pin']}}" />
+        <input type="text" name="textfield5"value="{{val['pin']}}" required pattern="[0-9]{6}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">EMAIL</th>
       <td><label>
-        <input type="text" name="textfield6"value="{{val['email']}}" />
+        <input type="text" name="textfield6"value="{{val['email']}}"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">PHONE</th>
       <td><label>
-        <input type="text" name="textfield7"value="{{val['phone']}}" />
+        <input type="text" name="textfield7"value="{{val['phone']}}" required pattern="[6789][0-9]{9}"/></td>
+      </tr>/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">GENDER</th>
       <td><label>
-        <input name="radiobutton" type="radio" value="male" {% if val['gender']=="male" %} checked {% endif %} />
+        <input name="radiobutton" type="radio" value="male" checked {% if val['gender']=="male" %} checked {% endif %}  />
       MALE
       <br />
       <input name="radiobutton" type="radio" value="female" {% if val['gender']=="female" %} checked {% endif %}/>

@@ -9,54 +9,54 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="hrreg#about">
-  <h2>ADD HR</h2>
-  <table width="200" border="1" class="table" class="table table-dark">
+  <h2 align="center">ADD HR</h2>
+  <table width="200" border="1"  class="table table-dark">
     <tr>
       <th scope="row">FIRST NAME </th>
       <td><label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">LAST NAME </th>
       <td><label>
-        <input type="text" name="textfield2" />
+        <input type="text" name="textfield2" required pattern="[A-Z a-z.]{1,25}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">PLACE</th>
       <td><label>
-      <input type="text" name="textfield3" />
+      <input type="text" name="textfield3" required pattern="[A-Z a-z.]{3,25}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">POST</th>
       <td><label>
-        <input type="text" name="textfield4" />
+        <input type="text" name="textfield4"required pattern="[A-Z a-z.]{3,25}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">PIN</th>
       <td><label>
-        <input type="text" name="textfield5" />
+        <input type="text" name="textfield5" required pattern="[0-9]{6}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">EMAIL</th>
       <td><label>
-        <input type="text" name="textfield6" />
+        <input type="text" name="textfield6" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">PHONE</th>
       <td><label>
-        <input type="text" name="textfield7" />
+        <input type="text" name="textfield7" required pattern="[6789][0-9]{9}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">GENDER</th>
       <td><label>
-        <input name="radiobutton" type="radio" value="male" />
+        <input name="radiobutton" type="radio" value="male" checked />
       MALE
       <br />
       <input name="radiobutton" type="radio" value="female" />
@@ -66,13 +66,13 @@
     <tr>
       <th scope="row">USERNAME</th>
       <td><label>
-        <input type="text" name="textfield8" />
+        <input type="text" name="textfield8" required />
       </label></td>
     </tr>
     <tr>
       <th scope="row">PASSWORD</th>
       <td><label>
-        <input type="text" name="textfield9" />
+        <input type="text" name="textfield9" required />
       </label></td>
     </tr>
     <tr>

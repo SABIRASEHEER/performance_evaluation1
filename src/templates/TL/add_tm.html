@@ -13,11 +13,11 @@
 <body>
 <form id="form1" name="form1" method="post" action="add_tm">
   <h1 align="center"><strong>TEAM MEMBER </strong></h1>
-  <table width="200" border="1">
+  <table width="200" border="1" class="table table-striped table-dark">
     <tr>
       <th scope="row">FIRST NAME </th>
       <td><label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield"  required pattern="[A-Z a-z.]{3,25}" />
       </label></td>
     </tr>
     <tr>
