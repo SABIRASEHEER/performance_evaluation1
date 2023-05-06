@@ -15,7 +15,7 @@
     <tr>
       <th scope="row">WORK</th>
       <td><label>
-        <select name="select">
+        <select name="select" selected>
           {% for i in val %}
           <option value="{{i['wid']}}">{{i['work']}}</option>
           {% endfor %}
@@ -26,7 +26,7 @@
     <tr>
       <th scope="row">TL</th>
       <td><label>
-        <select name="select2">
+        <select name="select2" selected>
           {% for i in val1 %}
           <option value="{{i['tl_id']}}">{{i['first_name']}} {{i['last_name']}}</option>
           {% endfor %}

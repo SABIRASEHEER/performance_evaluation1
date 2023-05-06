@@ -116,34 +116,60 @@ def viewperformance_search():
     fd=request.form['textfield']
     td=request.form['textfield2']
     if ty=="TEAM MEMBER":
-        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN % s AND % s GROUP BY `tm`.`lid`"
+
+        # qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+        # res2 = selectone(qry3, (session['lid'], fd, td))
+        # print(res2, "eeeeeeeeeeeerrrrrrrrrrrrrr")
+        # rt = float(res2['per'])/20
+
+        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name`,`tm`.`lid` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN % s AND % s GROUP BY `tm`.`lid`"
         res=selectall2(qry,(fd,td))
         result=[]
         for i in res:
-            if float(i['scr'])>4:
+            per=2.5
+            try:
+                qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*5) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+                res2 = selectone(qry3, (i['lid'], fd, td))
+                per=float(res2['per'])
+            except:
+                pass
+            i['per']=per
+            i['fscr']=(per+float(i['scr']))/2
+            if float(i['fscr'])>4:
                 i['p']="excelent"
-            elif float(i['scr']) >3:
+            elif float(i['fscr']) >3:
                 i['p'] = "good"
-            elif float(i['scr']) > 2:
+            elif float(i['fscr']) > 2:
                 i['p'] = "avarage"
-            elif float(i['scr']) > 1:
+            elif float(i['fscr']) > 1:
                 i['p'] = "bad"
             else:
                 i['p'] = "poor"
+
+
             result.append(i)
         return render_template('ADMIN/view_performance.html',val=result)
     else:
-        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date` BETWEEN %s AND %s GROUP BY `tl`.`lid`"
+        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name`,`tl`.`lid` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date` BETWEEN %s AND %s GROUP BY `tl`.`lid`"
         res = selectall2(qry, (fd, td))
         result = []
         for i in res:
-            if float(i['scr']) > 4:
+            per = 2.5
+            try:
+                qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*5) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+                res2 = selectone(qry3, (i['lid'], fd, td))
+                per = float(res2['per'])
+            except:
+                pass
+            i['per'] = per
+            i['fscr'] = (per + float(i['scr'])) / 2
+            if float(i['fscr']) > 4:
                 i['p'] = "excelent"
-            elif float(i['scr']) > 3:
+            elif float(i['fscr']) > 3:
                 i['p'] = "good"
-            elif float(i['scr']) > 2:
+            elif float(i['fscr']) > 2:
                 i['p'] = "avarage"
-            elif float(i['scr']) > 1:
+            elif float(i['fscr']) > 1:
                 i['p'] = "bad"
             else:
                 i['p'] = "poor"
@@ -208,6 +234,11 @@ def add_feedback():
     qry="INSERT INTO feedback_tl VALUES(NULL,%s,%s,%s,CURDATE())"
     val=(session['rid'],feedback,s)
     iud(qry,val)
+
+
+
+
+
     return '''<script>alert('added');window.location='/addfeedback'</script>'''
 
 
@@ -236,7 +267,7 @@ def add_tl():
     return '''<script>alert("Added");window.location='/viewtl'</script>'''
 
 
-@app.route('/addwork',methods=['post'])
+@app.route('/addwork',methods=['post','get'])
 def addwork():
     return render_template('HR/add_work.html')
 
@@ -366,34 +397,57 @@ def viewperformance_search1():
     fd=request.form['textfield']
     td=request.form['textfield2']
     if ty=="TEAM MEMBER":
-        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN %s AND %s AND `tm`.`lid` IN(SELECT `lid` FROM `tm` WHERE `tl_id` IN(SELECT `lid` FROM `tl` WHERE `hid`=%s)) GROUP BY `tm`.`lid`"
+
+        # qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*100) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+        # res2 = selectall2(qry3, (session['lid'],fd, td))
+        # print(res2,"eeeeeeeeeeeerrrrrrrrrrrrrr")
+
+        qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name`,`tm`.`lid` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm' AND `report`.`date` BETWEEN %s AND %s AND `tm`.`lid` IN(SELECT `lid` FROM `tm` WHERE `tl_id` IN(SELECT `lid` FROM `tl` WHERE `hid`=%s)) GROUP BY `tm`.`lid`"
         res=selectall2(qry,(fd,td,session['lid']))
         result=[]
         for i in res:
-            if float(i['scr'])>4:
+            per=2.5
+            try:
+                qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*5) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+                res2 = selectone(qry3, (i['lid'], fd, td))
+                per=float(res2['per'])
+            except:
+                pass
+            i['per']=per
+            i['fscr']=(per+float(i['scr']))/2
+            if float(i['fscr'])>4:
                 i['p']="excelent"
-            elif float(i['scr']) >3:
+            elif float(i['fscr']) >3:
                 i['p'] = "good"
-            elif float(i['scr']) > 2:
+            elif float(i['fscr']) > 2:
                 i['p'] = "avarage"
-            elif float(i['scr']) > 1:
+            elif float(i['fscr']) > 1:
                 i['p'] = "bad"
             else:
                 i['p'] = "poor"
             result.append(i)
         return render_template('HR/view_performance.html',val=result)
     else:
-        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date`  BETWEEN %s AND %s AND `tl`.`lid` IN (SELECT `lid` FROM `tl` WHERE `hid`=%s) GROUP BY `tl`.`lid`"
+        qry = "SELECT AVG(`score`) AS scr,`first_name`,`last_name`,`tl`.`lid` FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `report` ON `report`.`wid`=`assign_tl`.`wid` JOIN `feedback_tl` ON `feedback_tl`.`rid`=`report`.`rid` WHERE `report`.`type`='tl'  AND `report`.`date`  BETWEEN %s AND %s AND `tl`.`lid` IN (SELECT `lid` FROM `tl` WHERE `hid`=%s) GROUP BY `tl`.`lid`"
         res = selectall2(qry, (fd, td,session['lid']))
         result = []
         for i in res:
-            if float(i['scr']) > 4:
+            per = 2.5
+            try:
+                qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*5) AS per FROM `attendance` WHERE `lid`=%s AND `date` BETWEEN %s AND %s"
+                res2 = selectone(qry3, (i['lid'], fd, td))
+                per = float(res2['per'])
+            except:
+                pass
+            i['per'] = per
+            i['fscr'] = (per + float(i['scr'])) / 2
+            if float(i['fscr']) > 4:
                 i['p'] = "excelent"
-            elif float(i['scr']) > 3:
+            elif float(i['fscr']) > 3:
                 i['p'] = "good"
-            elif float(i['scr']) > 2:
+            elif float(i['fscr']) > 2:
                 i['p'] = "avarage"
-            elif float(i['scr']) > 1:
+            elif float(i['fscr']) > 1:
                 i['p'] = "bad"
             else:
                 i['p'] = "poor"
@@ -510,7 +564,7 @@ def add_tm():
 
 @app.route('/assigntm')
 def assigntm():
-    qry = "select * from work where hid=%s"
+    qry = "SELECT * FROM `work` JOIN `assign_tl` ON `work`.`wid`=`assign_tl`.`wid` WHERE `assign_tl`.`tl_id`=%s"
     res = selectall2(qry, session['lid'])
     print(res)
     qry1 = "select * from tm "
@@ -608,11 +662,13 @@ def updatereport():
 @app.route('/update_report',methods=['post','get'])
 def update_report():
     report = request.files['file']
-
     status = request.form['textfield']
     work = request.form['select']
+
+    report.save(r'C:\Users\SABIRA\PycharmProjects\Performance_evaluation\src\static\report\\'+report.filename)
+
     qry = " INSERT INTO report VALUES(NULL,%s,%s,CURDATE(),%s,'tl')"
-    val = (work, report, status)
+    val = (work, report.filename, status)
     iud(qry, val)
     return '''<script>alert('updated');window.location='/updatereport'</script>'''
 
@@ -640,21 +696,29 @@ def viewnot2():
 @app.route('/viewperformance3')
 def viewperformance3():
     print(request.form)
-    qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name` FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm'  AND tm.`tl_id`=%s GROUP BY `tm`.`lid` "
+    qry="SELECT AVG(`score`) AS scr,`first_name`,`last_name`,tm.lid FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` JOIN `feedback` ON `feedback`.`rid`=`report`.`rid` WHERE `report`.`type`='tm'  AND tm.`tl_id`=%s GROUP BY `tm`.`lid` "
     res=selectall2(qry,session['lid'])
     result = []
     for i in res:
-        if float(i['scr']) > 4:
+        per = 2.5
+        try:
+            qry3 = "SELECT ROUND((SUM(`attendance`)/COUNT(`attendance`))*5) AS per FROM `attendance` WHERE `lid`=%s "
+            res2 = selectone(qry3, (i['lid']))
+            per = float(res2['per'])
+        except:
+            pass
+        i['per'] = per
+        i['fscr'] = (per + float(i['scr'])) / 2
+        if float(i['fscr']) > 4:
             i['p'] = "excelent"
-        elif float(i['scr']) > 3:
+        elif float(i['fscr']) > 3:
             i['p'] = "good"
-        elif float(i['scr']) > 2:
+        elif float(i['fscr']) > 2:
             i['p'] = "avarage"
-        elif float(i['scr']) > 1:
+        elif float(i['fscr']) > 1:
             i['p'] = "bad"
         else:
             i['p'] = "poor"
-        result.append(i)
     return render_template('TL/view_performance.html',val=result)
 
 @app.route('/viewreport1')
@@ -682,18 +746,20 @@ def sendcomp():
 
 @app.route('/updatereport1')
 def updatereport1():
-    qry = "SELECT work.*,assign_tm.* FROM WORK JOIN assign_tm ON work.wid=assign_tm.wid WHERE `assign_tm`.`tm_id`=%s "
-    res=selectall2(qry,session['lid'])
-    return render_template('TM/update_report.html',val=res)
+    wid=request.args.get('id')
+    session['widd']=wid
+    # qry = "SELECT work.*,assign_tm.* FROM WORK JOIN assign_tm ON work.wid=assign_tm.wid WHERE `assign_tm`.`tm_id`=%s "
+    # res=selectall2(qry,session['lid'])
+    return render_template('TM/update_report.html')
 
 @app.route('/update_report1',methods=['post','get'])
 def update_report1():
     report=request.files['file']
 
     status=request.form['textfield']
-    work=request.form['select']
+
     qry=" INSERT INTO report VALUES(NULL,%s,%s,CURDATE(),%s,'tm')"
-    val=(work,report,status)
+    val=(session['widd'],report,status)
     iud(qry,val)
     return '''<script>alert('updated');window.location='/updatereport1'</script>'''
 
@@ -736,7 +802,7 @@ def viewreply():
 
 @app.route('/viewwork1')
 def viewwork1():
-    qry="  SELECT work.*,assign_tm.* FROM WORK JOIN assign_tm ON work.wid=assign_tm.wid WHERE `assign_tm`.`tm_id`=%s "
+    qry="SELECT work.*,assign_tm.* FROM WORK JOIN assign_tm ON work.wid=assign_tm.wid WHERE `assign_tm`.`tm_id`=%s "
     res=selectall2(qry,session['lid'])
     return render_template('TM/view_work.html',val=res)
 

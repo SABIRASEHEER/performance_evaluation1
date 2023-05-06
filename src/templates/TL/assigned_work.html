@@ -15,6 +15,7 @@
       <th scope="col">WORK</th>
       <th scope="col">ASSIGNED DATE</th>
 	  <th scope="col">DATE OF SUBMISSION</th>
+
       
     </tr>
     {% for i in val %}
@@ -22,6 +23,7 @@
       <td>&nbsp;{{i['work']}}</td>
       <td>&nbsp;{{i['date']}}</td>
       <td>&nbsp;{{i['submission_date']}}</td>
+      <th><a href="updatereport">Update Work</a> </th>
     </tr>
     {% endfor %}
   </table>

@@ -26,14 +26,14 @@
       <td>&nbsp;{{i['phone']}}</td>
       <td>&nbsp;{{i['email']}}</td>
       <td>{{i['gender']}}</td>
-      <td><p><a href="edithr?id={{i['hid']}}#about">EDIT</a></p>
-      <p><a href="deletehr?id={{i['lid']}}#about">DELETE</a></p></td>
+      <td><p><a href="edithr?id={{i['hid']}}#about" class="link-success" >EDIT</a></p>
+      <p><a href="deletehr?id={{i['lid']}}#about" class="link-danger">DELETE</a></p></td>
     </tr>
     {% endfor %}
     <tr>
       <td colspan="6"><label>
         <div align="center">
-          <input type="submit" name="Submit" value="ADD" />
+          <input type="submit" name="Submit" value="ADD"class="btn btn-warning" />
           </div>
       </label></td>
     </tr>

@@ -47,7 +47,9 @@
     </tr>
     <tr>
       <th scope="col">NAME</th>
-      <th scope="col">SCORE</th>
+      <th scope="col">FEEDBACK SCORE</th>
+      <th scope="col">ATTENDANCE SCORE</th>
+      <th scope="col">AVARAGE SCORE</th>
       <th scope="col">PERFORMANCE</th>
     </tr>
 
@@ -55,6 +57,8 @@
     <tr>
       <td>{{i['first_name']}}{{i['last_name']}}</td>
       <td>&nbsp;{{i['scr']}}</td>
+      <td>&nbsp;{{i['per']}}</td>
+      <td>&nbsp;{{i['fscr']}}</td>
       <td> {{i['p']}} </td>
     </tr>
     {% endfor %}

@@ -12,15 +12,19 @@
   <h2 align="center">PERFORMANCE</h2>
   <table width="200" border="1" class="table table-striped table-dark">
     <tr>
-      <th scope="col">TEAM MEMBER </th>
-      <th scope="col">SCORE</th>
+     <th scope="col">NAME</th>
+      <th scope="col">FEEDBACK SCORE</th>
+      <th scope="col">ATTENDANCE SCORE</th>
+      <th scope="col">AVARAGE SCORE</th>
       <th scope="col">PERFORMANCE</th>
     </tr>
    {% for i in val %}
     <tr>
-      <td>&nbsp;{{i['first_name']}} {{i['last_name']}}</td>
+      <td>{{i['first_name']}}{{i['last_name']}}</td>
       <td>&nbsp;{{i['scr']}}</td>
-      <td>&nbsp;{{i['p']}}</td>
+      <td>&nbsp;{{i['per']}}</td>
+      <td>&nbsp;{{i['fscr']}}</td>
+      <td> {{i['p']}} </td>
     </tr>
     {% endfor %}
   </table>
