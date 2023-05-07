@@ -13,7 +13,7 @@
   <h2 align="center">MANAGE WORK </h2>
   <p align="center">
     <label>
-    <input type="submit" name="Submit" value="ADD" />
+    <input type="submit" name="Submit" value="ADD" class="btn btn-warning"/>
     </label>
   </p>
   <table width="200" border="1" class="table table-striped table-dark">
@@ -31,8 +31,8 @@
       <td>{{i['date']}}</td>
       <td>&nbsp;{{i['submission_date']}}</td>
       <td>&nbsp;{{i['status']}}</td>
-      <td><a href="editwork?id={{i['wid']}}">EDIT</a></td>
-      <td><a href="deletework?id={{i['wid']}}">DELETE</a></td>
+      <td><a href="editwork?id={{i['wid']}}"class="link-success">EDIT</a></td>
+      <td><a href="deletework?id={{i['wid']}}"class="link-danger">DELETE</a></td>
     </tr>
     {% endfor %}
   </table>

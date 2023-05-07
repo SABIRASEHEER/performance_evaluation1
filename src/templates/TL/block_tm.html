@@ -27,16 +27,16 @@
       <td>&nbsp;{{i['email']}}</td>
       <td>&nbsp;{{i['gender']}}</td>
       <td>{% if i['type']=='team_member' %}
-        <a href="block_tm?id={{i['lid']}}#about">BLOCK </a>
+        <a href="block_tm?id={{i['lid']}}#about"class="link-danger">BLOCK </a>
         {% else %}
 
-	  <a href="unblocktm?id={{i['lid']}}">UNBLOCK </a> {% else %}</td>
+	  <a href="unblocktm?id={{i['lid']}}"class="link-success">UNBLOCK </a> {% else %}</td>
     </tr>
     {% endfor %}
     <tr>
       <td colspan="7"><label>
         <div align="center">
-          <input type="submit" name="Submit" value="ADD" />
+          <input type="submit" name="Submit" value="ADD" class="link-warning"/>
         </div>
       </label></td>
     </tr>

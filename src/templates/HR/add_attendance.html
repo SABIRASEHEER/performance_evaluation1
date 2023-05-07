@@ -3,72 +3,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
-
-  <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#check").change(function(){
-    var id=document.getElementById("check").value;
-   if (id == "1" ){
-    $(".cat1").show();
-}
-  });
-});
-</script>
-</head>
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="add_attendance1">
-  <h2 align="center">Add Attendance</h2>
-  <table width="200" border="1" class="table table-striped table-dark">
+  <h2 align="center">Add Attendance </h2>
+  <table width="200" border="1">
     <tr>
-      <th scope="row">Leaders</th>
+      <td colspan="3">Date
+        <input type="date" name="textfield3" required/></td>
       <td><label>
-        <select name="select" selected>
-         {% for i in val %}
-          <option value="{{i['lid']}}">{{i['first_name']}} {{i['last_name']}}</option>
-          {% endfor %}
-        </select>
+        <input type="submit" name="Submit" value="Mark" />
       </label></td>
-    </tr>
+    </tr
     <tr>
-      <th scope="row">Attendance</th>
-      <td><label>
-        <input name="radiobutton" type="radio" value="1" id="check" onchange="check()" checked/>
-      Present
-      <br />
-      <input name="radiobutton" type="radio" value="0" />
-      Absent
-      </label></td>
+      <th scope="col">Leaders</th>
+      <th scope="col">Attendance</th>
+      <th scope="col">In Time</th>
+      <th scope="col">Out Time </th>
     </tr>
-
-    <tr class="cat1" style="display:none">
-      <th scope="row">In Time </th>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['first_name']}} {{i['last_name']}}</td>
+      <td><label>
+        <input type="checkbox" name="checkbox" value="{{i['lid']}}" />
+      </label></td>
       <td><label>
         <input type="time" name="textfield" required/>
       </label></td>
-    </tr>
-    <tr class="cat1" style="display:none">
-      <th scope="row">Out Time </th>
       <td><label>
-        <input type="time" name="textfield2" required />
+        <input type="time" name="textfield2" required/>
       </label></td>
     </tr>
-    <tr>
-      <th scope="row">Date</th>
-      <td><label>
-        <input type="date" name="textfield3" required />
-      </label></td>
-    </tr>
-    <tr>
-      <th colspan="2" scope="row"><label>
-        <input type="submit" name="Submit" value="Mark " />
-      </label></th>
-    </tr>
+    {% endfor %}
+
   </table>
-  <h2 align="center">&nbsp; </h2>
+  <label></label>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
 </form>
 </body>
 </html>

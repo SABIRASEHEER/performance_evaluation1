@@ -28,14 +28,14 @@
       <td><label>
         <select name="select2" selected>
           {% for i in val1 %}
-          <option value="{{i['tl_id']}}">{{i['first_name']}} {{i['last_name']}}</option>
+          <option value="{{i['lid']}}">{{i['first_name']}} {{i['last_name']}}</option>
           {% endfor %}
         </select>
       </label></td>
     </tr>
     <tr>
       <th colspan="2" scope="row"><label>
-        <input type="submit" name="Submit" value="Add" />
+        <input type="submit" name="Submit" value="Add" class="btn btn-warning"/>
       </label></th>
     </tr>
   </table>

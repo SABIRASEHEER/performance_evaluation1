@@ -13,6 +13,13 @@
   <h2 align="center">TL DETAILS </h2>
   <table width="200" border="1" class="table table-striped table-dark">
     <tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD"class="btn btn-warning" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
       <th scope="col">NAME</th>
       <th scope="col">ADDRESS</th>
       <th scope="col">PHONE</th>
@@ -28,17 +35,11 @@
       <td>&nbsp;{{i['phone']}}</td>
       <td>{{i['email']}}</td>
       <td>&nbsp;{{i['gender']}}</td>
-      <td><a href="edit_tl?id={{i['lid']}}">EDIT </a></td>
-      <td><a href="delete_tl?id={{i['lid']}}">DELETE </a></td>
+      <td><a href="edit_tl?id={{i['lid']}}"class="link-success">EDIT </a></td>
+      <td><a href="delete_tl?id={{i['lid']}}"class="link-danger">DELETE </a></td>
     </tr>
     {% endfor %}
-    <tr>
-      <td colspan="6"><label>
-        <div align="center">
-          <input type="submit" name="Submit" value="ADD" />
-        </div>
-      </label></td>
-    </tr>
+
   </table>
 </form>
 </body>

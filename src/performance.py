@@ -8,6 +8,72 @@ app.secret_key='ffff'
 def login():
     return render_template('LOGIN.html')
 
+
+@app.route('/changepswd1')
+def changepswd1():
+    return render_template('HR/change_psw.html')
+
+@app.route('/change_pswd1',methods=['post'])
+def channge_pswd1():
+    curpswd=request.form['textfield']
+    nwpswd=request.form['textfield2']
+    confpswd=request.form['textfield3']
+    q="SELECT * FROM `login` JOIN `hr` ON `hr`.`lid`=`login`.`l_id` WHERE `login`.`password`=%s"
+    res=selectone(q,curpswd)
+    if res is None:
+        return '''<script>alert("old password is wrong");window.location='/home1'</script>'''
+    else:
+        if(nwpswd==confpswd):
+            q="UPDATE `login` SET `password`=%s WHERE `l_id`=%s"
+            v=(nwpswd,session['lid'])
+            iud(q,v)
+            return '''<script>alert("password changed succesfully");window.location='/home1'</script>'''
+        else:
+            return '''<script>alert("password doesn't match");window.location='/home1'</script>'''
+
+@app.route('/changepswd2')
+def channgepswd2():
+    return render_template('TL/change_psw.html')
+
+@app.route('/change_pswd2',methods=['post'])
+def channge_pswd2():
+    curpswd=request.form['textfield']
+    nwpswd=request.form['textfield2']
+    confpswd=request.form['textfield3']
+    q="SELECT * FROM `login` JOIN `tl` ON `tl`.`lid`=`login`.`l_id` WHERE `login`.`password`=%s"
+    res=selectone(q,curpswd)
+    if res is None:
+        return '''<script>alert("old password is wrong");window.location='/home2'</script>'''
+    else:
+        if(nwpswd==confpswd):
+            q="UPDATE `login` SET `password`=%s WHERE `l_id`=%s"
+            v=(nwpswd,session['lid'])
+            iud(q,v)
+            return '''<script>alert("password changed succesfully");window.location='/home2'</script>'''
+        else:
+            return '''<script>alert("password doesn't match");window.location='/home2'</script>'''
+@app.route('/changepswd3')
+def channgepswd3():
+    return render_template('TM/change_psw.html')
+
+@app.route('/change_pswd3',methods=['post'])
+def channge_pswd3():
+    curpswd=request.form['textfield']
+    nwpswd=request.form['textfield2']
+    confpswd=request.form['textfield3']
+    q="SELECT * FROM `login` JOIN `tm` ON `tm`.`lid`=`login`.`l_id` WHERE `login`.`password`=%s"
+    res=selectone(q,curpswd)
+    if res is None:
+        return '''<script>alert("old password is wrong");window.location='/home3'</script>'''
+    else:
+        if(nwpswd==confpswd):
+            q="UPDATE `login` SET `password`=%s WHERE `l_id`=%s"
+            v=(nwpswd,session['lid'])
+            iud(q,v)
+            return '''<script>alert("password changed succesfully");window.location='/home3'</script>'''
+        else:
+            return '''<script>alert("password doesn't match");window.location='/home3'</script>'''
+
 @app.route('/addhr',methods=['post','get'])
 def addhr():
     return render_template('ADMIN/ADD_HR.html')
@@ -192,11 +258,11 @@ def viewworkreport():
 def searchbytype():
     type=request.form['select']
     if type == 'TEAM LEADER':
-        qry="SELECT tl.first_name,tl.last_name,work.work,report.* FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `work`ON `assign_tl`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid` group by report.rid"
+        qry="SELECT tl.first_name,tl.last_name,work.work,report.* FROM `tl` JOIN `assign_tl` ON `assign_tl`.`tl_id`=`tl`.`lid` JOIN `work`ON `assign_tl`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid`  WHERE `report`.`type`='tl' GROUP BY report.rid"
         res=selectall(qry)
         return render_template('ADMIN/view_work_report.html',val=res)
     else:
-        qry = "SELECT tm.first_name,tm.last_name,work.work,report.* FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `work`ON `assign_tm`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid` group by report.rid"
+        qry = "SELECT tm.first_name,tm.last_name,work.work,report.* FROM `tm` JOIN `assign_tm` ON `assign_tm`.`tm_id`=`tm`.`lid` JOIN `work`ON `assign_tm`.`wid`=`work`.`wid` JOIN `report` ON `report`.`wid`=`work`.`wid` WHERE `report`.`type`='tm'  GROUP BY report.rid"
         res = selectall(qry)
         return render_template('ADMIN/view_work_report.html', val=res)
 
@@ -207,17 +273,64 @@ def addattendance1():
     res=selectall2(q,session['lid'])
     return render_template('HR/add_attendance.html',val=res)
 
+
+
+
+
+
 @app.route('/add_attendance1',methods=['post','get'])
 def add_attendance1():
-    leader = request.form['select']
-    intime= request.form['textfield']
+#     leader = request.form['select']
+#     intime= request.form['textfield']
+#     outtime = request.form['textfield2']
+#     date = request.form['textfield3']
+#     attendance = request.form['radiobutton']
+#     qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+#     val=(attendance,leader,date,intime,outtime)
+#     iud(qry,val)
+#     return'''<script>alert("atendance marked");window.location='/addattendance1'</script>'''
+#
+#
+#
+#
+# @app.route('/Add_attendance_post',methods=['post'])
+# def Add_attendance_post():
+
+    Attendance=request.form.getlist('checkbox')
+
+    # print(Attendance,"RRRRRRRRRRRRRRRRRRRR")
+    qry = "SELECT * FROM `tl` where hid=%s"
+    res = selectall2(qry,session['lid'])
+
+    intime = request.form['textfield']
     outtime = request.form['textfield2']
     date = request.form['textfield3']
-    attendance = request.form['radiobutton']
-    qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
-    val=(attendance,leader,date,intime,outtime)
-    iud(qry,val)
-    return'''<script>alert("atendance marked");window.location='/addattendance1'</script>'''
+
+    for i in res:
+        print(i,"LLLLLLLLLLLLLLLLLL")
+
+
+
+        q="SELECT * FROM `attendance` WHERE lid=%s AND `date`=%s"
+        res1=selectone(q,(i['lid'],date))
+        print(res1,"OOOOOOOOOOOOOOOO")
+        att=0
+        if str(i['lid']) in Attendance:
+            att=1
+        if res1 is None:
+            qry = "INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+            val = (att,str(i['lid']),date,intime,outtime)
+            iud(qry, val)
+
+
+        else:
+            qry="UPDATE `attendance` SET `attendance`=%s where lid=%s"
+            val = (att,str(i['lid']) )
+            iud(qry, val)
+
+    return '''<script>alert("added");window.location="/addattendance1"</script>'''
+
+
 
 
 @app.route('/addfeedback')
@@ -239,7 +352,7 @@ def add_feedback():
 
 
 
-    return '''<script>alert('added');window.location='/addfeedback'</script>'''
+    return '''<script>alert('added');window.location='/viewreport'</script>'''
 
 
 @app.route('/addtl',methods=['post','get'])
@@ -279,14 +392,14 @@ def addwork1():
     qry="INSERT INTO WORK VALUES(NULL,%s,CURDATE(),%s,'pending',%s)"
     val=(work,session['lid'],dateofsub)
     iud(qry,val)
-    return '''<script>alert("added");window.location='/addwork'</script>'''
+    return '''<script>alert("added");window.location='/managework'</script>'''
 
 @app.route('/assigntl')
 def assigntl():
     qry="select * from work where hid=%s"
     res=selectall2(qry,session['lid'])
-    qry1="select * from tl "
-    res1=selectall(qry1)
+    qry1="select * from tl where hid=%s"
+    res1=selectall2(qry1,session['lid'])
     return render_template('HR/assign_tl.html',val=res,val1=res1)
 
 @app.route('/assigntl1',methods=['post','get'])
@@ -456,14 +569,14 @@ def viewperformance_search1():
 
 @app.route('/viewreport')
 def viewreport():
-    qry="SELECT tl.*,assign_tl.`wid`,report.*,work.* FROM `work` JOIN `report` ON `report`.`wid`=`work`.`wid` JOIN `assign_tl` ON `assign_tl`.`wid`=`work`.`wid` JOIN `tl` ON `tl`.`lid`=`assign_tl`.`tl_id` WHERE `tl`.`hid`=%s"
+    qry="SELECT tl.*,assign_tl.`wid`,report.*,work.* FROM `work` JOIN `report` ON `report`.`wid`=`work`.`wid` JOIN `assign_tl` ON `assign_tl`.`wid`=`work`.`wid` JOIN `tl` ON `tl`.`lid`=`assign_tl`.`tl_id` WHERE `tl`.`hid`=%s AND `report`.`type`='tl'"
     res=selectall2(qry,session['lid'])
     return render_template('HR/view_report.html',val=res)
 
 @app.route('/viewtl')
 def viewtl():
-    qry="select * from tl"
-    res=selectall(qry)
+    qry="select * from tl where hid=%s"
+    res=selectall2(qry,session['lid'])
     return render_template('HR/view_tl.html',val=res)
 
 @app.route('/delete_tl')
@@ -507,15 +620,49 @@ def addattendance2():
 
 @app.route('/add_attendance2',methods=['post','get'])
 def add_attendance2():
-    member = request.form['select']
-    intime= request.form['textfield']
+    # member = request.form['select']
+    # intime= request.form['textfield']
+    # outtime = request.form['textfield2']
+    # date = request.form['textfield3']
+    # attendance = request.form['radiobutton']
+    # qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+    # val=(attendance,member,date,intime,outtime)
+    # iud(qry,val)
+    # return'''<script>alert("atendance marked");window.location='/addattendance2'</script>'''
+ # @app.route('/Add_attendance_post',methods=['post'])
+# def Add_attendance_post():
+    Attendance = request.form.getlist('checkbox')
+
+    qry = "SELECT * FROM `tm` where hid=%s"
+    res = selectall2(qry,session['lid'])
+
+    intime = request.form['textfield']
     outtime = request.form['textfield2']
     date = request.form['textfield3']
-    attendance = request.form['radiobutton']
-    qry="INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
-    val=(attendance,member,date,intime,outtime)
-    iud(qry,val)
-    return'''<script>alert("atendance marked");window.location='/addattendance2'</script>'''
+
+    for i in res:
+        print(i,"LLLLLLLLLLLLLLLLLL")
+
+
+
+        q="SELECT * FROM `attendance` WHERE lid=%s AND `date`=%s"
+        res1=selectone(q,(i['lid'],date))
+        print(res1,"OOOOOOOOOOOOOOOO")
+        att=0
+        if str(i['lid']) in Attendance:
+            att=1
+        if res1 is None:
+            qry = "INSERT INTO attendance VALUES(NULL,%s,%s,%s,%s,%s)"
+            val = (att,str(i['lid']),date,intime,outtime)
+            iud(qry, val)
+
+
+        else:
+            qry="UPDATE `attendance` SET `attendance`=%s where lid=%s"
+            val = (att,str(i['lid']) )
+            iud(qry, val)
+
+    return '''<script>alert("added");window.location="/addattendance1"</script>'''
 
 @app.route('/addfeedback1')
 def addfeedback1():
@@ -567,8 +714,10 @@ def assigntm():
     qry = "SELECT * FROM `work` JOIN `assign_tl` ON `work`.`wid`=`assign_tl`.`wid` WHERE `assign_tl`.`tl_id`=%s"
     res = selectall2(qry, session['lid'])
     print(res)
-    qry1 = "select * from tm "
-    res1 = selectall(qry1)
+
+    qry1 = "select * from tm where tl_id=%s"
+
+    res1 = selectall2(qry1,session['lid'])
     return render_template('TL/assign_tm.html',val=res,val1=res1)
 
 @app.route('/assign_tm',methods=['post','get'])
@@ -582,8 +731,9 @@ def assign_tm():
 
 @app.route('/assignedwork')
 def assignedwork():
-    qry="select * from work"
-    res=selectall(qry)
+    qry="SELECT work.*,`assign_tl`.* FROM `work` JOIN `assign_tl` ON `work`.`wid`=`assign_tl`.`wid` WHERE `assign_tl`.`tl_id`=%s"
+
+    res=selectall2(qry,session['lid'])
 
     return render_template('TL/assigned_work.html',val=res)
 
@@ -670,7 +820,7 @@ def update_report():
     qry = " INSERT INTO report VALUES(NULL,%s,%s,CURDATE(),%s,'tl')"
     val = (work, report.filename, status)
     iud(qry, val)
-    return '''<script>alert('updated');window.location='/updatereport'</script>'''
+    return '''<script>alert('updated');window.location='/assignedwork'</script>'''
 
 
 @app.route('/myatt',methods=['post','get'])
@@ -748,9 +898,11 @@ def sendcomp():
 def updatereport1():
     wid=request.args.get('id')
     session['widd']=wid
+    q="SELECT * FROM `work` WHERE `wid`=%s"
+    re=selectone(q,wid)
     # qry = "SELECT work.*,assign_tm.* FROM WORK JOIN assign_tm ON work.wid=assign_tm.wid WHERE `assign_tm`.`tm_id`=%s "
     # res=selectall2(qry,session['lid'])
-    return render_template('TM/update_report.html')
+    return render_template('TM/update_report.html',n=re['work'])
 
 @app.route('/update_report1',methods=['post','get'])
 def update_report1():
@@ -761,7 +913,10 @@ def update_report1():
     qry=" INSERT INTO report VALUES(NULL,%s,%s,CURDATE(),%s,'tm')"
     val=(session['widd'],report,status)
     iud(qry,val)
-    return '''<script>alert('updated');window.location='/updatereport1'</script>'''
+    qry2="UPDATE `work` SET `status`='report updated' WHERE wid=%s"
+    val2=(session['widd'])
+    iud(qry2,val2)
+    return '''<script>alert('updated');window.location='/viewwork1'</script>'''
 
 @app.route('/viewattendance',methods=['post'])
 def viewattendance():

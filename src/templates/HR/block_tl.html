@@ -30,15 +30,15 @@
       <td>&nbsp;{{i['gender']}}</td>
       <td>
         {% if i['type']=='team_member' %}
-        <a href="blocktl1?id={{i['lid']}}">BLOCK </a>
+        <a href="blocktl1?id={{i['lid']}}"class="link-danger">BLOCK </a>
         {% else %}
-	    <a href="unblock?id={{i['lid']}}">UNBLOCK </a>{% endif %}</td>
+	    <a href="unblock?id={{i['lid']}}"class="link-success">UNBLOCK </a>{% endif %}</td>
     </tr>
     {% endfor %}
     <tr>
       <td colspan="7"><label>
         <div align="center">
-          <input type="submit" name="Submit" value="ADD" />
+          <input type="submit" name="Submit" value="ADD" class="btn btn-warning"/>
         </div>
       </label></td>
     </tr>
