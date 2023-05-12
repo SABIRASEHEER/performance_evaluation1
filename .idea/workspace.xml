@@ -5,48 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d125c3a-259b-43be-a45f-05b32892c690" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/HR/change_psw.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/TL/change_psw.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/TM/change_psw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/input_data.txt" afterPath="$PROJECT_DIR$/src/input_data.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/performance.py" afterPath="$PROJECT_DIR$/src/performance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/ADD_HR.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/ADD_HR.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/HOME.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/HOME.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/VIEW_COMPLAINT.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/VIEW_COMPLAINT.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/edit_hr.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/edit_hr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/ADMIN/view_work_report.html" afterPath="$PROJECT_DIR$/src/templates/ADMIN/view_work_report.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/add_attendance.html" afterPath="$PROJECT_DIR$/src/templates/HR/add_attendance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/add_feedback.html" afterPath="$PROJECT_DIR$/src/templates/HR/add_feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/add_tl.html" afterPath="$PROJECT_DIR$/src/templates/HR/add_tl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/add_work.html" afterPath="$PROJECT_DIR$/src/templates/HR/add_work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/assign_tl.html" afterPath="$PROJECT_DIR$/src/templates/HR/assign_tl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/block_tl.html" afterPath="$PROJECT_DIR$/src/templates/HR/block_tl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/edit_tl.html" afterPath="$PROJECT_DIR$/src/templates/HR/edit_tl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/editwork.html" afterPath="$PROJECT_DIR$/src/templates/HR/editwork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/manage_work.html" afterPath="$PROJECT_DIR$/src/templates/HR/manage_work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/update_hr.html" afterPath="$PROJECT_DIR$/src/templates/HR/update_hr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/view_report.html" afterPath="$PROJECT_DIR$/src/templates/HR/view_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/HR/view_tl.html" afterPath="$PROJECT_DIR$/src/templates/HR/view_tl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/add_attendance.html" afterPath="$PROJECT_DIR$/src/templates/TL/add_attendance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/add_feedback.html" afterPath="$PROJECT_DIR$/src/templates/TL/add_feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/add_tm.html" afterPath="$PROJECT_DIR$/src/templates/TL/add_tm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/assign_tm.html" afterPath="$PROJECT_DIR$/src/templates/TL/assign_tm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/assigned_work.html" afterPath="$PROJECT_DIR$/src/templates/TL/assigned_work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/block_tm.html" afterPath="$PROJECT_DIR$/src/templates/TL/block_tm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/edit_tm.html" afterPath="$PROJECT_DIR$/src/templates/TL/edit_tm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/home.html" afterPath="$PROJECT_DIR$/src/templates/TL/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/manage_tm.html" afterPath="$PROJECT_DIR$/src/templates/TL/manage_tm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/my_att.html" afterPath="$PROJECT_DIR$/src/templates/TL/my_att.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/update_report.html" afterPath="$PROJECT_DIR$/src/templates/TL/update_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TL/view_report.html" afterPath="$PROJECT_DIR$/src/templates/TL/view_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TM/send_complaint.html" afterPath="$PROJECT_DIR$/src/templates/TM/send_complaint.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TM/update_report.html" afterPath="$PROJECT_DIR$/src/templates/TM/update_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TM/view_att.html" afterPath="$PROJECT_DIR$/src/templates/TM/view_att.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TM/view_reply.html" afterPath="$PROJECT_DIR$/src/templates/TM/view_reply.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/TM/view_work.html" afterPath="$PROJECT_DIR$/src/templates/TM/view_work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/hr_index.html" afterPath="$PROJECT_DIR$/src/templates/hr_index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,105 +19,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="performance.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="performance.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/performance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="917" column="18" lean-forward="true" selection-start-line="917" selection-start-column="18" selection-end-line="917" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="652" column="40" lean-forward="true" selection-start-line="652" selection-start-column="40" selection-end-line="652" selection-end-column="40" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#27665#27845#0" expanded="false" />
+                <element signature="e#27660#27840#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/HR/view_report.html">
+      <file leaf-file-name="add_attendance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/TL/add_attendance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="26" column="76" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="76" />
+            <state relative-caret-position="-408">
+              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TL/view_report.html">
+      <file leaf-file-name="vader_lexicon.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vader_lexicon.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+            <state relative-caret-position="-9911">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_att.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TL/my_att.html">
+      <file leaf-file-name="positive.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/positive.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="1" selection-end-column="44" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TM/update_report.html">
+      <file leaf-file-name="negative.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/negative.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="28" column="68" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+            <state relative-caret-position="-2023">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_work.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TM/view_work.html">
+      <file leaf-file-name="sampleee.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sampleee.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assign_tm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/TL/assign_tm.html">
+      <file leaf-file-name="add_feedback.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/HR/add_feedback.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assign_tl.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/HR/assign_tl.html">
+      <file leaf-file-name="add_attendance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/HR/add_attendance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="-408">
+              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hr_index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/hr_index.html">
+      <file leaf-file-name="add_feedback.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/TL/add_feedback.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="53" column="52" lean-forward="false" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change_psw.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/HR/change_psw.html">
+      <file leaf-file-name="codep.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/codep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="9" column="64" lean-forward="false" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-              <folding />
+            <state relative-caret-position="-629">
+              <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,15 +135,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addfeedback_1</find>
-      <find>addfeedback</find>
       <find>addfeedback'</find>
       <find>viewperformance_search'</find>
       <find>attendancetl</find>
       <find>verify</find>
       <find>viewatt</find>
       <find>HR</find>
-      <find>addattendance2</find>
       <find>sentiment_score</find>
       <find>sum(</find>
       <find>view_performance.html</find>
@@ -201,6 +162,9 @@
       <find>searchbytype</find>
       <find>viewwork1</find>
       <find>update</find>
+      <find>addattendance2</find>
+      <find>verifyatt</find>
+      <find>addattendance</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,14 +215,14 @@
         <option value="$PROJECT_DIR$/src/templates/TM/update_report.html" />
         <option value="$PROJECT_DIR$/src/templates/ADMIN/view_performance.html" />
         <option value="$PROJECT_DIR$/src/templates/ADMIN/edit_hr.html" />
-        <option value="$PROJECT_DIR$/src/templates/HR/add_attendance.html" />
-        <option value="$PROJECT_DIR$/src/templates/TL/add_attendance.html" />
         <option value="$PROJECT_DIR$/src/templates/ADMIN/view_work_report.html" />
         <option value="$PROJECT_DIR$/src/templates/HR/change_psw.html" />
         <option value="$PROJECT_DIR$/src/templates/hr_index.html" />
         <option value="$PROJECT_DIR$/src/templates/HR/assign_tl.html" />
         <option value="$PROJECT_DIR$/src/templates/TL/my_att.html" />
         <option value="$PROJECT_DIR$/src/templates/TL/view_report.html" />
+        <option value="$PROJECT_DIR$/src/templates/HR/add_attendance.html" />
+        <option value="$PROJECT_DIR$/src/templates/TL/add_attendance.html" />
         <option value="$PROJECT_DIR$/src/performance.py" />
       </list>
     </option>
@@ -466,15 +430,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17019667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3715221" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3715221" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -516,7 +479,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/performance.py</url>
-          <line>952</line>
+          <line>950</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -528,54 +491,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/SEND_REPLY.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="70" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/VIEW_COMPLAINT.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/VIEW_WORK.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/MANAGE_HR.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="35" column="79" lean-forward="false" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/HOME.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="28" column="65" lean-forward="true" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/HR/add_feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="22" column="78" lean-forward="false" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/HR/add_tl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -660,14 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="17" column="73" lean-forward="true" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TL/add_feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -824,22 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/HR/add_attendance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/TL/add_attendance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/ADMIN/view_work_report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -928,14 +819,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/HR/add_feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/TL/add_feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/HR/add_attendance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/TL/add_attendance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sampleee.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/performance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="917" column="18" lean-forward="true" selection-start-line="917" selection-start-column="18" selection-end-line="917" selection-end-column="18" />
+        <state relative-caret-position="102">
+          <caret line="652" column="40" lean-forward="true" selection-start-line="652" selection-start-column="40" selection-end-line="652" selection-end-column="40" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#27665#27845#0" expanded="false" />
+            <element signature="e#27660#27840#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/positive.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/negative.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2023">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/codep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vader_lexicon.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9911">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

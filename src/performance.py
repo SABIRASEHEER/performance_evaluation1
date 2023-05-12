@@ -633,7 +633,7 @@ def add_attendance2():
 # def Add_attendance_post():
     Attendance = request.form.getlist('checkbox')
 
-    qry = "SELECT * FROM `tm` where hid=%s"
+    qry = "SELECT * FROM `tm` where tl_id=%s"
     res = selectall2(qry,session['lid'])
 
     intime = request.form['textfield']
@@ -642,8 +642,6 @@ def add_attendance2():
 
     for i in res:
         print(i,"LLLLLLLLLLLLLLLLLL")
-
-
 
         q="SELECT * FROM `attendance` WHERE lid=%s AND `date`=%s"
         res1=selectone(q,(i['lid'],date))
@@ -662,7 +660,7 @@ def add_attendance2():
             val = (att,str(i['lid']) )
             iud(qry, val)
 
-    return '''<script>alert("added");window.location="/addattendance1"</script>'''
+    return '''<script>alert("added");window.location="/verifyatt"</script>'''
 
 @app.route('/addfeedback1')
 def addfeedback1():
@@ -874,7 +872,7 @@ def viewperformance3():
 @app.route('/viewreport1')
 def viewreport1():
 
-    qry = "SELECT tm.*,assign_tm.`wid`,report.*,work.* FROM `work`  JOIN `assign_tm` ON `assign_tm`.`wid`=`work`.`wid` JOIN `tm` ON `tm`.`lid`=`assign_tm`.`tm_id` JOIN `report` ON `report`.`wid`=`assign_tm`.`a_tm_id` WHERE `report`.`type`='tm' and `tm`.`tl_id`=%s"
+    qry = "SELECT tm.*,assign_tm.*,report.*,work.* FROM `work`  JOIN `assign_tm` ON `assign_tm`.`wid`=`work`.`wid` JOIN `tm` ON `tm`.`lid`=`assign_tm`.`tm_id` JOIN `report` ON `report`.`wid`=`assign_tm`.`wid` WHERE `report`.`type`='tm' AND `tm`.`tl_id`=10"
     res = selectall2(qry, session['lid'])
     return render_template('TL/view_report.html',val=res)
 
